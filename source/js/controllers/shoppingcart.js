@@ -31,7 +31,7 @@ app.controller('shoppingcartCtrl', function($scope, $state, $localStorage, $http
 			})
 			.then(function(res) {
 				console.log('res:', res);
-				swal("Tour purchase has been processed"
+				swal("Your purchase has been processed")
 			}, function(err) {
 				console.log('err:', err);
 			})
