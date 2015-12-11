@@ -1,3 +1,3 @@
-# Express Example
+#Bookstore
 
-First, cd into the project directory, and do `npm run setup` to install the dependencies listed in the package.json and bower.json.  Then you can start the server in Node.
+Despite my best efforts, Heroku has failed me https://salty-coast-6294.herokuapp.com/#/
