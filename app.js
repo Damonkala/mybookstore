@@ -1,7 +1,7 @@
 'use strict';
 
 var PORT = process.env.PORT || 3000;
-var MONGO_URL = 'mongodb://localhost/payments';
+var MONGO_URL = process.env.MONGOLAB_URI || 'mongodb://localhost/payments';
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -9,11 +9,11 @@ var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
 
 var mongoose = require('mongoose');
-// mongoose.connect(process.env.MONGOLAB_URI, function(err){
-//   if(err) return console.log(err);
-//   console.log('MongoDB connected to',process.env.MONGOLAB_URI);
-// });
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/payments');
+mongoose.connect(MONGOLAB_URL, function(err){
+  if(err) return console.log(err);
+  console.log('MongoDB connected to',MONGOLAB_URL);
+});
+mongoose.connect('mongodb://localhost/payments');
 var app = express();
 
 app.set('view engine', 'jade');
